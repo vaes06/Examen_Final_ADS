@@ -2,7 +2,7 @@ CREATE TABLE student (
   student_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
-  student_code INT NOT NULL,
+  student_payment LONG NOT NULL,
   active BIT NOT NULL,
   PRIMARY KEY (student_id),
   INDEX IX_customer_last_first_name (last_name, first_name)

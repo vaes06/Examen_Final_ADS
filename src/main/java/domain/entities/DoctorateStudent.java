@@ -6,7 +6,7 @@ public class DoctorateStudent extends Student {
 	
 	private boolean hasThesis;
 	private long payInfo;
-	
+		
 	public boolean isHasThesis() {
 		return hasThesis;
 	}

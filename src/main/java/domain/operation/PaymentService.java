@@ -11,17 +11,17 @@ public class PaymentService {
 	public double getPaymentInfo(Student student){
 	if (student.getStudentLevel() == "Doctorate") {
 		double discount = 0.5;
-		return student.getPaymentInfo()*discount;
+		return student.getPaymenInfo()*discount;
 	}
 			
 	if (student.getStudentLevel() == "Magister") {
 			double discount = 0.8;
-			return student.getPaymentInfo()*discount;
+			return student.getPaymenInfo()*discount;
 	}
 	
 	if (student.getStudentLevel() == "Undergrad") {
 		double discount = 0.9;
-		return student.getPaymentInfo()*discount;
+		return student.getPaymenInfo()*discount;
 	}
 	return 0;
 	}

@@ -12,26 +12,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import application.dtos.StudentDto;
+import application.services.StudentApplicationService;
+
 
 @RestController
-@RequestMapping("api/customers/{customerId}/accounts")
+@RequestMapping("/getpayment/{studentId}")
 public class StudentsController {
 	@Autowired
-	AccountApplicationService accountApplicationService;
+	StudentApplicationService studentApplicationService;
 	
-	@Autowired
-	ResponseHandler responseHandler;
 	
 	@RequestMapping(method = RequestMethod.POST, path = "", consumes = "application/json; charset=UTF-8", produces = "application/json; charset=UTF-8")
-	public ResponseEntity<Object> create(@PathVariable("customerId") long customerId, @RequestBody BankAccountDto bankAccountDto) throws Exception {
+	public ResponseEntity<Object> getPayment(@PathVariable("studentId") long customerId, @RequestBody StudentDto studentDto) throws Exception {
         try {
-        	bankAccountDto = accountApplicationService.create(customerId, bankAccountDto);
-            return new ResponseEntity<Object>(bankAccountDto, HttpStatus.OK);
+        	studentDto = studentApplicationService.getPayment( studentDto);
+            return new ResponseEntity<Object>(studentDto, HttpStatus.OK);
         } catch(IllegalArgumentException ex) {
-			return this.responseHandler.getAppCustomErrorResponse(ex.getMessage());
+			return null;
 		} catch(Exception ex) {
 			ex.printStackTrace();
-			return this.responseHandler.getAppExceptionResponse();
+			return null;
 		}
     }
 	

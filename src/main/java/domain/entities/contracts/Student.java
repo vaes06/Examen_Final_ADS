@@ -9,8 +9,15 @@ public abstract class Student {
     private long studentCode;
     private Boolean isActive;
     private Boolean hasScholarship;
-    private long paymentInfo;
     private String studentLevel;
+    private long paymenInfo;
+    public long getPaymenInfo() {
+		return paymenInfo;
+	}
+	public void setPaymenInfo(long paymenInfo) {
+		this.paymenInfo = paymenInfo;
+	}
+	
     
 	public String getStudentLevel() {
 		return studentLevel;
@@ -18,12 +25,7 @@ public abstract class Student {
 	public void setStudentLevel(String studentLeve) {
 		this.studentLevel = studentLeve;
 	}
-	public long getPaymentInfo() {
-		return paymentInfo;
-	}
-	public void setPaymentInfo(long paymentInfo) {
-		this.paymentInfo = paymentInfo;
-	}
+		
 	public long getId() {
 		return id;
 	}

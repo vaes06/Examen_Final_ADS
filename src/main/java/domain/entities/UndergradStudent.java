@@ -6,6 +6,7 @@ public class UndergradStudent extends Student{
 	
 	private long totalCredits;
 	private long payInfo;
+	
 
 	public long getTotalCredits() {
 		return totalCredits;
