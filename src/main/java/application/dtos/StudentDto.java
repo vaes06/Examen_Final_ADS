@@ -8,7 +8,17 @@ public class StudentDto {
     private long paymenInfo;
     private String studentLevel;
     
-    public StudentDto()
+    StudentDto() {
+    
+    }
+      
+
+	public StudentDto(long id) {
+		super();
+		this.id = id;
+	}
+
+
 	public long getId() {
 		return id;
 	}
